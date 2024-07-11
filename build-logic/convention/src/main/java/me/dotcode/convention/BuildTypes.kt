@@ -16,8 +16,7 @@ internal fun Project.configureBuildTypes(
         buildFeatures {
             buildConfig = true
         }
-        //val apiKey = gradleLocalProperties(rootDir).getProperty("API_KEY")
-        val apiKey = "123"
+        val apiKey = gradleLocalProperties(rootDir).getProperty("API_KEY")
         when(extensionType) {
             ExtensionType.APPLICATION -> {
                 extensions.configure<ApplicationExtension> {
