@@ -1,6 +1,5 @@
 package me.dotcode.runique
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
@@ -10,6 +9,7 @@ import androidx.navigation.navigation
 import me.dotcode.auth.presentation.intro.IntroScreenRoot
 import me.dotcode.auth.presentation.login.LoginScreenRoot
 import me.dotcode.auth.presentation.register.RegisterScreenRoot
+import me.dotcode.run.presentation.run_overview.RunOverviewScreenRoot
 
 @Composable
 fun NavigationRoot(
@@ -84,7 +84,7 @@ private fun NavGraphBuilder.runGraph(navController: NavHostController) {
         route = "run"
     ) {
         composable("run_overview") {
-            Text(text = "Run overview!")
+            RunOverviewScreenRoot()
         }
     }
 }
