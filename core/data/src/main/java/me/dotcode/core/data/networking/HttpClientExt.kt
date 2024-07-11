@@ -1,4 +1,4 @@
-package me.dotcode.core.data
+package me.dotcode.core.data.networking
 
 import me.dotcode.core.domain.util.DataError
 import me.dotcode.core.domain.util.Result
@@ -14,6 +14,7 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.util.network.UnresolvedAddressException
 import kotlinx.coroutines.CancellationException
 import kotlinx.serialization.SerializationException
+import me.dotcode.core.data.BuildConfig
 
 suspend inline fun <reified Response: Any> HttpClient.get(
     route: String,

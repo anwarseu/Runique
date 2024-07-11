@@ -2,7 +2,7 @@ package me.dotcode.auth.data
 
 import io.ktor.client.HttpClient
 import me.dotcode.auth.domain.AuthRepository
-import me.dotcode.core.data.post
+import me.dotcode.core.data.networking.post
 import me.dotcode.core.domain.util.DataError
 import me.dotcode.core.domain.util.EmptyResult
 
