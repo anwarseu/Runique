@@ -9,6 +9,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.navigation.compose.rememberNavController
 import me.dotcode.core.presentation.designsystem.AnalyticsIcon
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
 
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Icon(imageVector = AnalyticsIcon, contentDescription = "Analytics")
+                    val navController = rememberNavController()
+                    NavigationRoot(navController = navController)
                 }
             }
         }
