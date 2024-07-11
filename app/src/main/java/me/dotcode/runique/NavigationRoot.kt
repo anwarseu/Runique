@@ -9,6 +9,7 @@ import androidx.navigation.navigation
 import me.dotcode.auth.presentation.intro.IntroScreenRoot
 import me.dotcode.auth.presentation.login.LoginScreenRoot
 import me.dotcode.auth.presentation.register.RegisterScreenRoot
+import me.dotcode.run.presentation.active_run.ActiveRunScreenRoot
 import me.dotcode.run.presentation.run_overview.RunOverviewScreenRoot
 
 @Composable
@@ -84,7 +85,13 @@ private fun NavGraphBuilder.runGraph(navController: NavHostController) {
         route = "run"
     ) {
         composable("run_overview") {
-            RunOverviewScreenRoot()
+            RunOverviewScreenRoot(onStartRunClick = {
+                navController.navigate("active_run")
+            })
+        }
+
+        composable("active_run") {
+            ActiveRunScreenRoot()
         }
     }
 }
