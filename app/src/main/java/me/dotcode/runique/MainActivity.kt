@@ -24,15 +24,20 @@ class MainActivity : ComponentActivity() {
                 viewModel.state.isCheckingAuth
             }
         }
-        enableEdgeToEdge()
         setContent {
             RuniqueTheme {
+                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val navController = rememberNavController()
-                    NavigationRoot(navController = navController)
+                    if(!viewModel.state.isCheckingAuth) {
+                        val navController = rememberNavController()
+                        NavigationRoot(
+                            navController = navController,
+                            isLoggedIn = viewModel.state.isLoggedIn
+                        )
+                    }
                 }
             }
         }
