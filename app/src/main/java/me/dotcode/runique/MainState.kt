@@ -1,6 +1,6 @@
 package me.dotcode.runique
 
 data class MainState(
-    val isLoggedIn: Boolean = true,
+    val isLoggedIn: Boolean = false,
     val isCheckingAuth: Boolean = false
 )

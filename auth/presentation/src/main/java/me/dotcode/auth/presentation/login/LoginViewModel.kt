@@ -60,28 +60,25 @@ class LoginViewModel(
     private fun login() {
         viewModelScope.launch {
             state = state.copy(isLoggingIn = true)
+            val result = authRepository.login(
+                email = state.email.text.toString().trim(),
+                password = state.password.text.toString()
+            )
             state = state.copy(isLoggingIn = false)
-            eventChannel.send(LoginEvent.LoginSuccess)
-            return@launch
-//            val result = authRepository.login(
-//                email = state.email.text.toString().trim(),
-//                password = state.password.text.toString()
-//            )
-//            state = state.copy(isLoggingIn = false)
-//            when(result) {
-//                is Result.Error -> {
-//                    if(result.error == DataError.Network.UNAUTHORIZED) {
-//                        eventChannel.send(LoginEvent.Error(
-//                            UiText.StringResource(R.string.error_email_password_incorrect)
-//                        ))
-//                    } else {
-//                        eventChannel.send(LoginEvent.Error(result.error.asUiText()))
-//                    }
-//                }
-//                is Result.Success -> {
-//                    eventChannel.send(LoginEvent.LoginSuccess)
-//                }
-//            }
+            when(result) {
+                is Result.Error -> {
+                    if(result.error == DataError.Network.UNAUTHORIZED) {
+                        eventChannel.send(LoginEvent.Error(
+                            UiText.StringResource(R.string.error_email_password_incorrect)
+                        ))
+                    } else {
+                        eventChannel.send(LoginEvent.Error(result.error.asUiText()))
+                    }
+                }
+                is Result.Success -> {
+                    eventChannel.send(LoginEvent.LoginSuccess)
+                }
+            }
         }
     }
 }
