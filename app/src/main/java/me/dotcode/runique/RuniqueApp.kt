@@ -6,6 +6,7 @@ import kotlinx.coroutines.SupervisorJob
 import me.dotcode.auth.data.di.authDataModule
 import me.dotcode.auth.presentation.di.authViewModelModule
 import me.dotcode.core.data.di.coreDataModule
+import me.dotcode.core.database.di.databaseModule
 import me.dotcode.run.location.di.locationModule
 import me.dotcode.run.presentation.di.runPresentationModule
 import me.dotcode.runique.di.appModule
@@ -34,7 +35,8 @@ class RuniqueApp : Application() {
                 runPresentationModule,
                 appModule,
                 coreDataModule,
-                locationModule
+                locationModule,
+                databaseModule
             )
         }
     }
