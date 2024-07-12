@@ -1,4 +1,4 @@
-package me.dotcode.core.presentation.components
+package me.dotcode.core.presentation.designsystem.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box

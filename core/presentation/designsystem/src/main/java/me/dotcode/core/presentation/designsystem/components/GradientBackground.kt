@@ -1,4 +1,4 @@
-package me.dotcode.core.presentation.components
+package me.dotcode.core.presentation.designsystem.components
 
 import android.os.Build
 import androidx.compose.foundation.background

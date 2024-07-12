@@ -33,10 +33,10 @@ import me.dotcode.auth.presentation.R
 import me.dotcode.core.presentation.designsystem.EmailIcon
 import me.dotcode.core.presentation.designsystem.Poppins
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
-import me.dotcode.core.presentation.components.GradientBackground
-import me.dotcode.core.presentation.components.RuniqueActionButton
-import me.dotcode.core.presentation.components.RuniquePasswordTextField
-import me.dotcode.core.presentation.components.RuniqueTextField
+import me.dotcode.core.presentation.designsystem.components.GradientBackground
+import me.dotcode.core.presentation.designsystem.components.RuniqueActionButton
+import me.dotcode.core.presentation.designsystem.components.RuniquePasswordTextField
+import me.dotcode.core.presentation.designsystem.components.RuniqueTextField
 import me.dotcode.core.presentation.ui.ObserveAsEvents
 import org.koin.androidx.compose.koinViewModel
 

@@ -1,4 +1,4 @@
-package me.dotcode.core.presentation.components
+package me.dotcode.core.presentation.designsystem.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable

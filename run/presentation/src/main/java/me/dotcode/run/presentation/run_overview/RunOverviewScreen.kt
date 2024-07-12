@@ -18,10 +18,10 @@ import me.dotcode.core.presentation.designsystem.LogoIcon
 import me.dotcode.core.presentation.designsystem.LogoutIcon
 import me.dotcode.core.presentation.designsystem.RunIcon
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
-import me.dotcode.core.presentation.components.RuniqueFloatingActionButton
-import me.dotcode.core.presentation.components.RuniqueScaffold
-import me.dotcode.core.presentation.components.RuniqueToolbar
-import me.dotcode.core.presentation.components.util.DropDownItem
+import me.dotcode.core.presentation.designsystem.components.RuniqueFloatingActionButton
+import me.dotcode.core.presentation.designsystem.components.RuniqueScaffold
+import me.dotcode.core.presentation.designsystem.components.RuniqueToolbar
+import me.dotcode.core.presentation.designsystem.components.util.DropDownItem
 import me.dotcode.run.presentation.R
 import org.koin.androidx.compose.koinViewModel
 

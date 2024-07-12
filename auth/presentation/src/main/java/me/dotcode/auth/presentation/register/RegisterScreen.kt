@@ -43,10 +43,10 @@ import me.dotcode.core.presentation.designsystem.RuniqueDarkRed
 import me.dotcode.core.presentation.designsystem.RuniqueGray
 import me.dotcode.core.presentation.designsystem.RuniqueGreen
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
-import me.dotcode.core.presentation.components.GradientBackground
-import me.dotcode.core.presentation.components.RuniqueActionButton
-import me.dotcode.core.presentation.components.RuniquePasswordTextField
-import me.dotcode.core.presentation.components.RuniqueTextField
+import me.dotcode.core.presentation.designsystem.components.GradientBackground
+import me.dotcode.core.presentation.designsystem.components.RuniqueActionButton
+import me.dotcode.core.presentation.designsystem.components.RuniquePasswordTextField
+import me.dotcode.core.presentation.designsystem.components.RuniqueTextField
 import me.dotcode.core.presentation.ui.ObserveAsEvents
 import org.koin.androidx.compose.koinViewModel
 
@@ -87,6 +87,7 @@ fun RegisterScreenRoot(
     )
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun RegisterScreen(
     state: RegisterState,

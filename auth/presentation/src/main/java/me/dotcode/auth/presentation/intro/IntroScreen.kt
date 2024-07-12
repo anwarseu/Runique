@@ -20,9 +20,9 @@ import androidx.compose.ui.unit.sp
 import me.dotcode.auth.presentation.R
 import me.dotcode.core.presentation.designsystem.LogoIcon
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
-import me.dotcode.core.presentation.components.GradientBackground
-import me.dotcode.core.presentation.components.RuniqueActionButton
-import me.dotcode.core.presentation.components.RuniqueOutlinedActionButton
+import me.dotcode.core.presentation.designsystem.components.GradientBackground
+import me.dotcode.core.presentation.designsystem.components.RuniqueActionButton
+import me.dotcode.core.presentation.designsystem.components.RuniqueOutlinedActionButton
 
 @Composable
 fun IntroScreenRoot(

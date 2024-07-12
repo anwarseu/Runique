@@ -1,6 +1,6 @@
 @file:OptIn(ExperimentalMaterial3Api::class)
 
-package me.dotcode.core.presentation.components
+package me.dotcode.core.presentation.designsystem.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -40,7 +40,7 @@ import me.dotcode.core.presentation.designsystem.Poppins
 import me.dotcode.core.presentation.designsystem.R
 import me.dotcode.core.presentation.designsystem.RuniqueGreen
 import me.dotcode.core.presentation.designsystem.RuniqueTheme
-import me.dotcode.core.presentation.components.util.DropDownItem
+import me.dotcode.core.presentation.designsystem.components.util.DropDownItem
 
 @Composable
 fun RuniqueToolbar(

@@ -1,4 +1,4 @@
-package me.dotcode.core.presentation.components.util
+package me.dotcode.core.presentation.designsystem.components.util
 
 import androidx.compose.ui.graphics.vector.ImageVector
 
