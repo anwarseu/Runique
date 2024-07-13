@@ -7,12 +7,14 @@ import me.dotcode.auth.data.di.authDataModule
 import me.dotcode.auth.presentation.di.authViewModelModule
 import me.dotcode.core.data.di.coreDataModule
 import me.dotcode.core.database.di.databaseModule
+import me.dotcode.run.data.di.runDataModule
 import me.dotcode.run.location.di.locationModule
 import me.dotcode.run.network.di.networkModule
 import me.dotcode.run.presentation.di.runPresentationModule
 import me.dotcode.runique.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.workmanager.koin.workManagerFactory
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
@@ -30,15 +32,17 @@ class RuniqueApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@RuniqueApp)
+            workManagerFactory()
             modules(
                 authDataModule,
                 authViewModelModule,
-                runPresentationModule,
                 appModule,
                 coreDataModule,
+                runPresentationModule,
                 locationModule,
                 databaseModule,
-                networkModule
+                networkModule,
+                runDataModule
             )
         }
     }
