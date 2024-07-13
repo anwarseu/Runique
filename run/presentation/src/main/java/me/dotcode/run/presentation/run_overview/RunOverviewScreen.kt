@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 
 package me.dotcode.run.presentation.run_overview
 
@@ -37,12 +37,14 @@ import org.koin.androidx.compose.koinViewModel
 fun RunOverviewScreenRoot(
     onStartRunClick: () -> Unit,
     onLogoutClick: () -> Unit,
+    onAnalyticsClick: () -> Unit,
     viewModel: RunOverviewViewModel = koinViewModel(),
 ) {
     RunOverviewScreen(
         state = viewModel.state,
         onAction = { action ->
             when(action) {
+                RunOverviewAction.OnAnalyticsClick -> onAnalyticsClick()
                 RunOverviewAction.OnStartClick -> onStartRunClick()
                 RunOverviewAction.OnLogoutClick -> onLogoutClick()
                 else -> Unit
@@ -52,7 +54,6 @@ fun RunOverviewScreenRoot(
     )
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun RunOverviewScreen(
     state: RunOverviewState,

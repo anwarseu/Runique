@@ -1,8 +1,8 @@
 package me.dotcode.runique
 
 import android.app.Application
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.SupervisorJob
+import android.content.Context
+import com.google.android.play.core.splitcompat.SplitCompat
 import me.dotcode.auth.data.di.authDataModule
 import me.dotcode.auth.presentation.di.authViewModelModule
 import me.dotcode.core.data.di.coreDataModule
@@ -12,19 +12,20 @@ import me.dotcode.run.location.di.locationModule
 import me.dotcode.run.network.di.networkModule
 import me.dotcode.run.presentation.di.runPresentationModule
 import me.dotcode.runique.di.appModule
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.workmanager.koin.workManagerFactory
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
-class RuniqueApp : Application() {
+class RuniqueApp: Application() {
 
     val applicationScope = CoroutineScope(SupervisorJob())
 
     override fun onCreate() {
         super.onCreate()
-
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
@@ -42,8 +43,13 @@ class RuniqueApp : Application() {
                 locationModule,
                 databaseModule,
                 networkModule,
-                runDataModule
+                runDataModule,
             )
         }
+    }
+
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        SplitCompat.install(this)
     }
 }

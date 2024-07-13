@@ -39,6 +39,7 @@ import com.google.maps.android.compose.MarkerComposable
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 import com.google.maps.android.ktx.awaitSnapshot
+import kotlinx.coroutines.DelicateCoroutinesApi
 import me.dotcode.core.domain.location.Location
 import me.dotcode.core.domain.location.LocationTimestamp
 import me.dotcode.core.presentation.designsystem.RunIcon
@@ -48,6 +49,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@OptIn(DelicateCoroutinesApi::class)
 @Composable
 fun TrackerMap(
     isRunFinished: Boolean,
