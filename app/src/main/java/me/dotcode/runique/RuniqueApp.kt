@@ -8,6 +8,7 @@ import me.dotcode.auth.presentation.di.authViewModelModule
 import me.dotcode.core.data.di.coreDataModule
 import me.dotcode.core.database.di.databaseModule
 import me.dotcode.run.location.di.locationModule
+import me.dotcode.run.network.di.networkModule
 import me.dotcode.run.presentation.di.runPresentationModule
 import me.dotcode.runique.di.appModule
 import org.koin.android.ext.koin.androidContext
@@ -36,7 +37,8 @@ class RuniqueApp : Application() {
                 appModule,
                 coreDataModule,
                 locationModule,
-                databaseModule
+                databaseModule,
+                networkModule
             )
         }
     }
