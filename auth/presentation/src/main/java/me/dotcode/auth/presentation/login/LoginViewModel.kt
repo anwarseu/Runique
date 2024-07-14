@@ -2,7 +2,6 @@
 
 package me.dotcode.auth.presentation.login
 
-import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.text2.input.textAsFlow
 import androidx.compose.runtime.getValue
