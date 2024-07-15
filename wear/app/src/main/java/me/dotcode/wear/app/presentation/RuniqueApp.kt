@@ -24,7 +24,7 @@ class RuniqueApp: Application() {
                 appModule,
                 wearRunPresentationModule,
                 wearRunDataModule,
-                coreConnectivityDataModule
+                coreConnectivityDataModule,
             )
         }
     }
