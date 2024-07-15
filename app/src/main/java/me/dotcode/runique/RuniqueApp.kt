@@ -14,6 +14,7 @@ import me.dotcode.run.presentation.di.runPresentationModule
 import me.dotcode.runique.di.appModule
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
+import me.dotcode.core.connectivity.data.coreConnectivityDataModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.workmanager.koin.workManagerFactory
@@ -44,6 +45,7 @@ class RuniqueApp: Application() {
                 databaseModule,
                 networkModule,
                 runDataModule,
+                coreConnectivityDataModule
             )
         }
     }

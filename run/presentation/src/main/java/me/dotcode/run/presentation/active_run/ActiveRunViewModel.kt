@@ -13,6 +13,7 @@ import me.dotcode.core.domain.util.Result
 import me.dotcode.core.presentation.ui.asUiText
 import me.dotcode.run.domain.LocationDataCalculator
 import me.dotcode.run.domain.RunningTracker
+import me.dotcode.run.domain.WatchConnector
 import me.dotcode.run.presentation.active_run.service.ActiveRunService
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -23,12 +24,14 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.time.ZoneId
 import java.time.ZonedDateTime
 
 class ActiveRunViewModel(
     private val runningTracker: RunningTracker,
-    private val runRepository: RunRepository
+    private val runRepository: RunRepository,
+    private val watchConnector: WatchConnector
 ): ViewModel() {
 
     var state by mutableStateOf(ActiveRunState(
@@ -130,6 +133,7 @@ class ActiveRunViewModel(
             is ActiveRunAction.OnRunProcessed -> {
                 finishRun(action.mapPictureBytes)
             }
+            else -> Unit
         }
     }
 
