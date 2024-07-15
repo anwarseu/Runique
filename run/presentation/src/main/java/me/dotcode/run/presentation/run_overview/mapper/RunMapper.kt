@@ -2,6 +2,7 @@ package me.dotcode.run.presentation.run_overview.mapper
 
 import me.dotcode.core.domain.run.Run
 import me.dotcode.core.presentation.ui.formatted
+import me.dotcode.core.presentation.ui.toFormattedHeartRate
 import me.dotcode.core.presentation.ui.toFormattedKm
 import me.dotcode.core.presentation.ui.toFormattedKmh
 import me.dotcode.core.presentation.ui.toFormattedMeters
@@ -28,6 +29,8 @@ fun Run.toRunUi(): RunUi {
         maxSpeed = maxSpeedKmh.toFormattedKmh(),
         pace = duration.toFormattedPace(distanceKm),
         totalElevation = totalElevationMeters.toFormattedMeters(),
-        mapPictureUrl = mapPictureUrl
+        mapPictureUrl = mapPictureUrl,
+        avgHeartRate = avgHeartRate.toFormattedHeartRate(),
+        maxHeartRate = maxHeartRate.toFormattedHeartRate()
     )
 }
