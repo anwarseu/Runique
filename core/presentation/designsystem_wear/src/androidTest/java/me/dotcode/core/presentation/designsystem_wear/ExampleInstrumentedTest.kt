@@ -1,4 +1,4 @@
-package me.dotcode.wear.run.data
+package me.dotcode.core.presentation.designsystem_wear
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("me.dotcode.wear.run.data.test", appContext.packageName)
+        assertEquals("me.dotcode.core.presentation.designsystem_wear.test", appContext.packageName)
     }
 }
