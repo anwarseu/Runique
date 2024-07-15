@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import me.dotcode.core.connectivity.domain.messaging.MessagingAction
 import me.dotcode.core.domain.util.Result
+import me.dotcode.core.notification.ActiveRunService
 import me.dotcode.wear.run.domain.ExerciseTracker
 import me.dotcode.wear.run.domain.PhoneConnector
 import me.dotcode.wear.run.domain.RunningTracker
@@ -29,7 +30,11 @@ class TrackerViewModel(
     private val runningTracker: RunningTracker
 ): ViewModel() {
 
-    var state by mutableStateOf(TrackerState())
+    var state by mutableStateOf(TrackerState(
+        hasStartedRunning = ActiveRunService.isServiceActive.value,
+        isRunActive = ActiveRunService.isServiceActive.value && runningTracker.isTracking.value,
+        isTrackable = ActiveRunService.isServiceActive.value
+    ))
         private set
 
     private val hasBodySensorPermission = MutableStateFlow(false)

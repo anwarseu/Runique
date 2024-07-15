@@ -9,7 +9,10 @@ import org.koin.dsl.module
 
 val runPresentationModule = module {
     singleOf(::RunningTracker)
+    single {
+        get<RunningTracker>().elapsedTime
+    }
 
-    viewModelOf(::ActiveRunViewModel)
     viewModelOf(::RunOverviewViewModel)
+    viewModelOf(::ActiveRunViewModel)
 }

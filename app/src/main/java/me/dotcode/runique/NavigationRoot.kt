@@ -11,8 +11,8 @@ import androidx.navigation.navigation
 import me.dotcode.auth.presentation.intro.IntroScreenRoot
 import me.dotcode.auth.presentation.login.LoginScreenRoot
 import me.dotcode.auth.presentation.register.RegisterScreenRoot
+import me.dotcode.core.notification.ActiveRunService
 import me.dotcode.run.presentation.active_run.ActiveRunScreenRoot
-import me.dotcode.run.presentation.active_run.service.ActiveRunService
 import me.dotcode.run.presentation.run_overview.RunOverviewScreenRoot
 
 @Composable

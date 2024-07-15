@@ -15,7 +15,7 @@ import me.dotcode.core.presentation.ui.asUiText
 import me.dotcode.run.domain.LocationDataCalculator
 import me.dotcode.run.domain.RunningTracker
 import me.dotcode.run.domain.WatchConnector
-import me.dotcode.run.presentation.active_run.service.ActiveRunService
+import me.dotcode.core.notification.ActiveRunService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,7 +26,6 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import timber.log.Timber
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import kotlin.math.roundToInt
@@ -39,8 +38,8 @@ class ActiveRunViewModel(
 ): ViewModel() {
 
     var state by mutableStateOf(ActiveRunState(
-        shouldTrack = ActiveRunService.isServiceActive && runningTracker.isTracking.value,
-        hasStartedRunning = ActiveRunService.isServiceActive
+        shouldTrack = ActiveRunService.isServiceActive.value && runningTracker.isTracking.value,
+        hasStartedRunning = ActiveRunService.isServiceActive.value
     ))
         private set
 
@@ -256,7 +255,7 @@ class ActiveRunViewModel(
 
     override fun onCleared() {
         super.onCleared()
-        if(!ActiveRunService.isServiceActive) {
+        if(!ActiveRunService.isServiceActive.value) {
             applicationScope.launch {
                 watchConnector.sendActionToWatch(MessagingAction.Untrackable)
             }
