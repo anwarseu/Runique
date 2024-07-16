@@ -1,5 +1,6 @@
 package me.dotcode.core.data.di
 
+import io.ktor.client.engine.cio.CIO
 import me.dotcode.core.data.networking.HttpClientFactory
 import me.dotcode.core.data.auth.EncryptedSessionStorage
 import me.dotcode.core.data.run.OfflineFirstRunRepository
@@ -11,7 +12,7 @@ import org.koin.dsl.module
 
 val coreDataModule = module {
     single {
-        HttpClientFactory(get()).build()
+        HttpClientFactory(get()).build(CIO.create())
     }
     singleOf(::EncryptedSessionStorage).bind<SessionStorage>()
 

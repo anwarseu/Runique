@@ -3,6 +3,7 @@ package me.dotcode.core.data.networking
 import me.dotcode.core.data.BuildConfig
 import me.dotcode.core.domain.AuthInfo
 import io.ktor.client.HttpClient
+import io.ktor.client.engine.HttpClientEngine
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.auth.Auth
 import io.ktor.client.plugins.auth.providers.BearerTokens
@@ -24,8 +25,8 @@ import timber.log.Timber
 class HttpClientFactory(
     private val sessionStorage: SessionStorage
 ) {
-    fun build(): HttpClient {
-        return HttpClient(CIO) {
+    fun build(engine: HttpClientEngine): HttpClient {
+        return HttpClient(engine) {
             install(ContentNegotiation) {
                 json(
                     json = Json {
